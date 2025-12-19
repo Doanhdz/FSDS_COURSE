@@ -1,0 +1,20 @@
+[2025-12-19T07:14:28.608+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-12-19T07:14:28.625+0000] {taskinstance.py:2631} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: transform_data.minio_to_postgresql manual__2025-12-19T07:14:27.395831+00:00 [queued]>
+[2025-12-19T07:14:28.632+0000] {taskinstance.py:2631} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: transform_data.minio_to_postgresql manual__2025-12-19T07:14:27.395831+00:00 [queued]>
+[2025-12-19T07:14:28.632+0000] {taskinstance.py:2884} INFO - Starting attempt 1 of 1
+[2025-12-19T07:14:28.641+0000] {taskinstance.py:2907} INFO - Executing <Task(_PythonDecoratedOperator): minio_to_postgresql> on 2025-12-19 07:14:27.395831+00:00
+[2025-12-19T07:14:28.647+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=86) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-12-19T07:14:28.648+0000] {standard_task_runner.py:72} INFO - Started process 87 to run task
+[2025-12-19T07:14:28.649+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'transform_data', 'minio_to_postgresql', 'manual__2025-12-19T07:14:27.395831+00:00', '--job-id', '54', '--raw', '--subdir', 'DAGS_FOLDER/transform_data.py', '--cfg-path', '/tmp/tmp3flqumaf']
+[2025-12-19T07:14:28.650+0000] {standard_task_runner.py:105} INFO - Job 54: Subtask minio_to_postgresql
+[2025-12-19T07:14:28.688+0000] {task_command.py:467} INFO - Running <TaskInstance: transform_data.minio_to_postgresql manual__2025-12-19T07:14:27.395831+00:00 [running]> on host 72cce2298501
+[2025-12-19T07:14:28.755+0000] {taskinstance.py:3157} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='transform_data' AIRFLOW_CTX_TASK_ID='minio_to_postgresql' AIRFLOW_CTX_EXECUTION_DATE='2025-12-19T07:14:27.395831+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-19T07:14:27.395831+00:00'
+[2025-12-19T07:14:28.756+0000] {taskinstance.py:740} INFO - ::endgroup::
+[2025-12-19T07:15:06.982+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-12-19T07:15:06.992+0000] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2025-12-19T07:15:06.993+0000] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=transform_data, task_id=minio_to_postgresql, run_id=manual__2025-12-19T07:14:27.395831+00:00, execution_date=20251219T071427, start_date=20251219T071428, end_date=20251219T071506
+[2025-12-19T07:15:07.043+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-12-19T07:15:07.057+0000] {taskinstance.py:3924} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-19T07:15:07.059+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

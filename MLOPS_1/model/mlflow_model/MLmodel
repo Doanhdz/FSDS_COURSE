@@ -1,0 +1,31 @@
+artifact_path: stroke_pred_model
+flavors:
+  catboost:
+    catboost_version: 1.2.7
+    code: null
+    data: model.cb
+    model_type: CatBoostClassifier
+    save_format: cbm
+  python_function:
+    data: model.cb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.catboost
+    python_version: 3.9.21
+mlflow_version: 2.2.0
+model_uuid: 6dcf7976410041728f28e783d3d6ceb7
+run_id: 78e40695ccfa4e5598d4ff2d50510aee
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  type: dataframe
+signature:
+  inputs: '[{"name": "gender", "type": "string"}, {"name": "ever_married", "type":
+    "string"}, {"name": "work_type", "type": "string"}, {"name": "Residence_type",
+    "type": "string"}, {"name": "smoking_status", "type": "string"}, {"name": "avg_glucose_level_cat",
+    "type": "string"}, {"name": "bmi_cat", "type": "string"}, {"name": "age_cat",
+    "type": "string"}, {"name": "heart_disease_cat", "type": "string"}, {"name": "hypertension_cat",
+    "type": "string"}]'
+  outputs: '[{"name": "stroke", "type": "long"}]'
+utc_time_created: '2025-06-16 15:18:53.979391'

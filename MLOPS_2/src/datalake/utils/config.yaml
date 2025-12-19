@@ -1,0 +1,9 @@
+data:
+  folder_path: datalake/data_delta
+
+datalake:
+  endpoint: localhost:9000
+  bucket_name: taxi-data
+  folder_name: taxi
+  access_key: minio_access_key
+  secret_key: minio_secret_key
