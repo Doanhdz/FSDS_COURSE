@@ -214,7 +214,19 @@ AI Predict exposes log counts request via a metrics endpoint (`/predict`), Prome
 ![](references/images/jenkins-webhooks.png)
 - Access to Jenkins, click New Item to create new Multibranch Pipeline
 - In Configuration/Branch Sources, choose GitHub in Add source
+![](references/images/jenkins_job.png)
 
+#### Example Jenkins Pipeline (`Jenkinsfile`)
+
+This file defines the automation stages for building, testing, packaging, and deploying the ML model service using Jenkins. The typical pipeline in this `Jenkinsfile` includes:
+- **Test Stage:** Runs unit tests and validates dependencies by installing requirements and executing tests (usually using `pytest`).
+- **Build Stage:** Builds a Docker image of the service and tags it with the Jenkins build number, preparing it for deployment.
+- **Push Stage:** Authenticates with DockerHub (using stored Jenkins credentials) and pushes both the versioned and `latest` tags of the Docker image to the DockerHub registry.
+- **Deploy Stage:** Uses Kubernetes and Helm inside a containerized environment to deploy or upgrade the service on a target Kubernetes cluster based on the latest image.
+
+It also manages retention of build logs and incorporates timestamps for better build traceability. Credentials for DockerHub and any Kubernetes operations are managed securely via Jenkins credentials and secrets.  
+To use the pipeline, create a `Jenkinsfile` in your project’s root directory and commit it to your repository.
+![Jenkins Output](references/images/jenkins_pipeline.png)
 
 ### 3.6 Cloud & IAC
 To deploy this solution on cloud infrastructure wit Google Cloud Platform, you can automate resource provisioning using [Terraform](https://www.terraform.io/). Below is a general guide for creating a compute VM and optionally a Kubernetes cluster.
