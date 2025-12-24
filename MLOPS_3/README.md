@@ -2,6 +2,8 @@
 This project serving model with Kserve
 
 ## Serving Advanced
+### Architecture
+![Architecture](images/AI_Platform_Architect.png)
 ### Prerequisite
 Run mlflow service: `docker compose -f src/deploy-mlflow up -d`
 #### Serving with model onnx and triton inferenc serve
