@@ -20,7 +20,7 @@ pipeline {
             }
             steps {
                 echo 'Testing model correctness and requirmenets.txt'
-                sh 'pip install -r requirements.txt && pytest'
+                sh 'pip install -r MLOPS_1/requirements.txt && pytest'
             }
         }
         stage('Build') {
