@@ -27,7 +27,9 @@ pipeline {
             steps {
                 script {
                     echo 'Building image for deployment..'
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    dir('MLOPS_1') {
+                        dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    }
                     echo 'Pushing image to dockerhub..'
                     docker.withRegistry( '', registryCredential ) {
                         dockerImage.push()
