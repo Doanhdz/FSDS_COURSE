@@ -12,17 +12,17 @@ pipeline {
     }
 
     stages {
-        // stage('Test') {
-        //     agent {
-        //         docker {
-        //             image 'python:3.9'
-        //         }
-        //     }
-        //     steps {
-        //         echo 'Testing model correctness and requirmenets.txt'
-        //         sh 'pip install -r MLOPS_1/requirements.txt && pytest'
-        //     }
-        // }
+        stage('Test') {
+            agent {
+                docker {
+                    image 'python:3.9'
+                }
+            }
+            steps {
+                echo 'Testing model correctness and requirmenets.txt'
+                sh 'pip install -r MLOPS_1/requirements.txt && pytest'
+            }
+        }
         stage('Build') {
             steps {
                 script {
