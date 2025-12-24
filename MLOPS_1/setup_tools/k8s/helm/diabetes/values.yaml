@@ -1,0 +1,4 @@
+image:
+  repository: duyanhhust/mle_1_serving
+  tag: "0.0.1"
+  pullPolicy: Always

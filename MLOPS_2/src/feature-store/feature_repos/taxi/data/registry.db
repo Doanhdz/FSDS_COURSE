@@ -1,0 +1,68 @@
+
+J
+*
+diabete
+diabete id"
+diabete_idJdevices
+ûÇŽÊûãÎûÇŽÊûãÎ
+>
+
+__dummy"
+__dummy_idJdevices
+ûÇŽÊð½íÎûÇŽÊøÒóÎ
+@
+ 
+taxivendorid"vendoridJtaxi
+° “Ê°ÛÄ’š”Êø˜¬ý
+;
+
+__dummy"
+__dummy_idJtaxi
+° “ÊðŠÊ’š”Ê˜”¸ý1"$fb472b98-68f2-4184-bde6-fb050027c4e9*š”Êˆúùý2Å
+‡
+diabetedevicesdiabete"
+pregnancies"
+glucose"
+bloodpressure"
+skinthickness"
+insulin"
+bmi"
+diabetespedigreefunction"
+age2€¼àß:¼created‚F
+D{"name": "diabetes", "query": "SELECT * FROM diabetes", "table": ""}ŠZfeast.infra.offline_stores.contrib.postgres_offline_store.postgres_source.PostgreSQLSource¢diabetes@Rdiabete featuresb
+
+diabete_id9
+ûÇŽÊØ“ÔÎ¨ÍŽÊø‚¥é
+¨‘®êúÿÿÿÿ€¯ŒÕ–’Ê2Þ
+½
+taxitaxitaxi"
+tpep_dropoff_datetime"
+passenger_count"
+trip_distance"
+
+ratecodeid"
+store_and_fwd_flag"
+pulocationid"
+dolocationid"
+payment_type"
+fare_amount"	
+extra"
+mta_tax"
+
+tip_amount"
+tolls_amount"
+improvement_surcharge"
+total_amount"
+congestion_surcharge"
+airport_fee2€¼àß:½tpep_pickup_datetime‚>
+<{"name": "taxi", "query": "SELECT * FROM taxi", "table": ""}ŠZfeast.infra.offline_stores.contrib.postgres_offline_store.postgres_source.PostgreSQLSource¢taxi@Rtaxi featuresb
+vendorid
+° “Ê¨ä´’š”ÊÀ«übÆcreated‚F
+D{"name": "diabetes", "query": "SELECT * FROM diabetes", "table": ""}ŠZfeast.infra.offline_stores.contrib.postgres_offline_store.postgres_source.PostgreSQLSource¢diabetesªdevicesbÄtpep_pickup_datetime‚>
+<{"name": "taxi", "query": "SELECT * FROM taxi", "table": ""}ŠZfeast.infra.offline_stores.contrib.postgres_offline_store.postgres_source.PostgreSQLSource¢taxiªtaxiŠ)
+	
+devices
+ûÇŽÊ°žÚÃûÇŽÊ°žÚÃŠ&
+
+taxi
+° “Êˆ“ž‘š”Êˆ«Éú
