@@ -208,7 +208,7 @@ def create_streams(servers, schemas_path):
         # with open(schema_path, "r") as f:
         #     parsed_schema = json.loads(f.read())
 
-        # Get topic name for this device
+        # Topic name
         topic_name = "taxi_0"
 
         # Create a new topic for this device id if not exists

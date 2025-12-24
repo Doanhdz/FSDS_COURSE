@@ -12,12 +12,12 @@ from pyspark.sql.functions import col
 spark = SparkSession.builder \
     .appName("ParquetToDelta") \
     .getOrCreate()
-df = spark.read.parquet("/home/ndanh/Desktop/DuyAnh/MLOPs/FSDS/FSDS-Module-MLOPS-2/data/yellow_*.parquet")
+df = spark.read.parquet("src/datalake/data/yellow_*.parquet")
 df = df.withColumn("tpep_pickup_datetime", col("tpep_pickup_datetime").cast("timestamp"))
 df = df.withColumn("tpep_dropoff_datetime", col("tpep_dropoff_datetime").cast("timestamp"))
 
 
 df.write.format("delta") \
   .mode("overwrite") \
-  .save("/home/ndanh/Desktop/DuyAnh/MLOPs/FSDS/FSDS-Module-MLOPS-2/data_delta")
+  .save("src/datalake/data_delta")
 

@@ -6,70 +6,53 @@ pipeline {
         timestamps()
     }
 
-    environment {
-        REGISTRY = 'tamvlb/stroke_pred_api'
-        REGISTRY_CREDENTIAL = 'dockerhub'
-        BUILD_NUMBER = 'latest'
+    environment{
+        registry = 'duyanhhust/mle_1_serving'
+        registryCredential = 'dockerhub'
     }
 
     stages {
-        stage('Docker Test') {
-            steps {
-                sh 'docker --version'
-                sh 'docker-compose --version'
-            }
-        }
-
         stage('Test') {
             agent {
                 docker {
                     image 'python:3.9'
                 }
             }
-            environment {
-                MLFLOW_TRACKING_URI = "http://host.docker.internal:5001"
-            }
             steps {
-                echo 'Testing FastAPI app...'
-                sh '''
-                    pip install --no-cache-dir -r service/model_api_serving/api_source/requirements.txt
-                    pytest
-                '''
+                echo 'Testing model correctness and requirmenets.txt'
+                sh 'pip install -r requirements.txt && pytest'
             }
-            
         }
-
         stage('Build') {
             steps {
                 script {
-                    echo 'Building Docker image...'
-                    dockerImage = docker.build("${REGISTRY}:${BUILD_NUMBER}", "service/model_api_serving")
-                }
-            }
-        }
-
-        stage('Push') {
-            steps {
-                script {
-                    echo 'Pushing Docker image to Docker Hub...'
-                    docker.withRegistry('', REGISTRY_CREDENTIAL)  {
+                    echo 'Building image for deployment..'
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    echo 'Pushing image to dockerhub..'
+                    docker.withRegistry( '', registryCredential ) {
                         dockerImage.push()
                         dockerImage.push('latest')
                     }
                 }
             }
         }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying container...'
-                sh '''
-                    ls -la ./src       # Optional: confirms file is there
-                    chmod +x ./src/deploy.sh
-                    ./src/deploy.sh
-                    timeout 60s docker logs -f stroke_pred_api || true
-                '''
-            }
-        }
+        // stage('Deploy') {
+        //     agent {
+        //         kubernetes {
+        //             containerTemplate {
+        //                 name 'helm' // Name of the container to be used for helm upgrade
+        //                 image 'fullstackdatascience/jenkins-k8s:lts' // The image containing helm
+        //                 imagePullPolicy 'Always' // Always pull image in case of using the same tag
+        //             }
+        //         }
+        //     }
+        //     steps {
+        //         script {
+        //             container('helm') {
+        //                 sh("helm upgrade --install diabetes ./k8s/helm/diabetes --namespace model-serving")
+        //             }
+        //         }
+        //     }
+        // }
     }
 }

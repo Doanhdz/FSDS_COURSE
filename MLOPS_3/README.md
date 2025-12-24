@@ -77,7 +77,7 @@ curl -X POST -H "Content-Type: application/json"   -d '{
 ```
 
 #### Kubeflow Pipeline for training
-Install Kubeflow Pipeline:
+Setup Kubeflow Pipeline:
 ```bash
 # Run service kubeflow-pipeline
 export PIPELINE_VERSION=2.15.0
@@ -101,7 +101,7 @@ python ./client.py
 /home/os_sysadmin/miniconda3/envs/dl/lib/python3.9/site-packages/kfp/client/client.py:159: FutureWarning: This client only works with Kubeflow Pipeline v2.0.0-beta.2 and later versions.
   warnings.warn(
 Experiment details: http://10.24.1.39:8080/#/experiments/details/2f21e99a-527e-4c71-8760-42442fab6ae9
-Run details: http://10.24.1.39:8080/#/runs/details/d4a92de1-816a-4ef4-aa8d-0536e8886715
+Run details: http://10.24.1.39:8080/#/runs/details/d4a92de1-816a-4ef4-aa8d-0536e8886715)
 ```
 ![dashboard running pipeline](images/running_pipline.png)
 Check pipeline run: 

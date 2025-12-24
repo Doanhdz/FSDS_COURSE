@@ -121,7 +121,7 @@ You can check if Kafka producer is running normally by using
 ```shell
 docker logs flink-kafka-producer
 ```
-After that, get message from kafka and run flink for streaming processing, send output back to kafka with topic `sink_taxi`. 
+After that, get message from kafka and run flink for processing, send output back to kafka with topic `sink_taxi`. 
 Run command: `python src/streaming-processing/scripts/table_api.py`
 Check control-center in `localhost:9021` to view message
 ![Flink streaming](images/streaming_processing.png)

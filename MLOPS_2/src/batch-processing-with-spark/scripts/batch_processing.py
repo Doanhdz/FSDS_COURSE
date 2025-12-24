@@ -7,7 +7,7 @@ def main(args):
     # The entrypoint to access all functions of Spark
     spark = (
         SparkSession.builder.master("local[*]")
-        .appName("Python Spark read parquet example")
+        .appName("Python Spark read data")
         .getOrCreate()
     )
 
@@ -21,6 +21,7 @@ def main(args):
     df = df.repartition(
         num_partitions
     )  # Default using hash-based partition, which can potentially be lead to skew problem!
+       # Because of large data
   # Write to a single file result.parquet
     df.coalesce(1).write.mode("overwrite").parquet("datawarehouse/data/taxi")
 

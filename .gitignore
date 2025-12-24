@@ -1,2 +1,10 @@
 MLOPS_2/src/datalake/data/*
 MLOPS_2/src/datalake/data_delta/*
+MLOPS_2/src/datalake/data_delta/*
+MLOPS_2/src/datawarehouse/data/**
+MLOPS_2/src/pipeline-orchestration/logs/*
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+.venv/
